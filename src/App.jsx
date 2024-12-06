@@ -1,20 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
+import { TaskProvider } from "./TaskContext";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-
-  const handleAddTask = (taskText) => {
-    setTasks([...tasks, { id: Date.now(), text: taskText }]);
-  };
-
   return (
-    <div>
+    <TaskProvider>
       <h1>Task Manager</h1>
-      <AddTask onAdd={handleAddTask} />
-      <TaskList tasks={tasks} />
-    </div>
+      <AddTask />
+      <TaskList />
+    </TaskProvider>
   );
 }
 
