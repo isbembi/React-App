@@ -1,7 +1,8 @@
-import React, { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState } from "react";
 
 const TaskContext = createContext();
 
+// eslint-disable-next-line react/prop-types
 export const TaskProvider = ({ children }) => {
   const [tasks, setTasks] = useState([]);
 
